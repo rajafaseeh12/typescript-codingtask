@@ -24,7 +24,6 @@ export class SideBySideCompareComponent implements OnInit {
       Object.keys(this.searchResult1).forEach((key)=>{
         this.searchedArtist1 = this.searchResult1[key].artistmatches.artist;
       });
-      console.log("this.searchedArtist",this.searchedArtist1);
     })
 
   }
@@ -35,21 +34,18 @@ export class SideBySideCompareComponent implements OnInit {
       Object.keys(this.searchResult2).forEach((key)=>{
         this.searchedArtist2 = this.searchResult2[key].artistmatches.artist;
       });
-      console.log("this.searchedArtist",this.searchedArtist2);
     })
   }
 
   getFirstSearchArtistInfo(artistName:any){
     this.getArtistInfo.getArtistInfo(artistName).subscribe(data=>{
       this.artistDetail1 =  data;
-      console.log("this.artistDetail",this.artistDetail1);
     })
   }
 
   getSecondSearchArtistInfo(artistName:any){
     this.getArtistInfo.getArtistInfo(artistName).subscribe(data=>{
       this.artistDetail2 =  data;
-      console.log("this.artistDetail",this.artistDetail2);
     })
   }
 

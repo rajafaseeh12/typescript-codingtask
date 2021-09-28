@@ -6,10 +6,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'nt-Task';
-  // topArtists: any=[]
-  // constructor(private get :GetTopArtistsService){
-  //   this.get.getTopArtist().subscribe(data=>{
-  //     this.topArtists = data;
-  //   });
-  // } 
 }

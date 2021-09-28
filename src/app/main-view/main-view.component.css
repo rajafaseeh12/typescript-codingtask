@@ -7,6 +7,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  #bannerImg{
+    height:auto;
+    width :580px;
+  }
 
   h1,
   h2,

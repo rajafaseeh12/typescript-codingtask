@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchComponent } from './search/search.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatCardModule} from '@angular/material/card';
@@ -25,7 +24,6 @@ import { SideBySideCompareComponent } from './side-by-side-compare/side-by-side-
   declarations: [
     AppComponent,
     NavBarComponent,
-    SearchComponent,
     MainViewComponent,
     ModalComponent,
     SideBySideCompareComponent
