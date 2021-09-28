@@ -1,0 +1,22 @@
+<div class="toolbar" role="banner">
+  <img width="40" alt="Last Fm Logo" src="https://www.last.fm/static/images/defaults/player_default_album.430223706b14.png"/>
+  <span>Music Artist Information</span>
+  <ul ngbNav>
+    <li >
+      <button mat-button routerLink="">Home</button>
+    </li>
+    <li>
+      <button mat-button routerLink="sideBySide">Side by Side Compare</button>
+    </li>
+  </ul>
+  <div class="spacer"></div>
+    <input type="text" placeholder="Search an Artist" aria-label="string" #searchBox (keyup)="search(searchBox.value)" matInput [matAutocomplete]="auto" id="searchBox">
+    <mat-autocomplete #auto="matAutocomplete" >
+      <mat-option *ngFor="let search of searchedArtist" [value]="search.name" (click)="getSearchArtistInfo(search.name)">
+        {{search.name}}
+      </mat-option>
+    </mat-autocomplete>
+</div>
+
+  
+

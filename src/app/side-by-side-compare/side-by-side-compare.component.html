@@ -1,0 +1,74 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="content" role="main">
+        <div class="card highlight-card card-small">
+          <p>
+            Side-by-Side Comparison
+          </p>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6" id="firstgrid">
+        <input type="text"
+           placeholder="Search an Artist"
+           aria-label="string"
+           #searchBox1 (keyup)="search1(searchBox1.value)"
+           matInput
+           [matAutocomplete]="auto1"
+           id="searchBox">
+            <mat-autocomplete #auto1="matAutocomplete" >
+            <mat-option *ngFor="let search1 of searchedArtist1" [value]="search1.name" (click)="getFirstSearchArtistInfo(search1.name)" >
+                {{search1.name}}
+            </mat-option>
+            </mat-autocomplete>
+            <br><br>
+            <div>
+                <mat-card class="example-card">
+                <mat-card-title-group>
+                  <mat-card-title>Artist Name : {{artistDetail1.artist && artistDetail1.artist.name}}</mat-card-title>
+                  <mat-card-subtitle>Listeners: {{artistDetail1.artist && artistDetail1.artist.stats && artistDetail1.artist.stats.listeners}} </mat-card-subtitle>
+                  <mat-card-subtitle>Play Counts: {{artistDetail1.artist && artistDetail1.artist.stats && artistDetail1.artist.stats.playcount}}</mat-card-subtitle>
+                  <img mat-card-sm-image src="https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png" >
+                </mat-card-title-group>
+                <mat-card-content>
+                    Description:
+                  {{artistDetail1.artist &&  artistDetail1.artist.bio && artistDetail1.artist.bio.summary}}
+                </mat-card-content>
+                <a [hidden]="!artistDetail1.artist" href="{{ artistDetail1.artist && artistDetail1.artist.url}}" target="_blank"><button mat-button>View Profile</button></a>
+              </mat-card>
+            </div>
+    </div>
+    <div class="col-lg-6" id="secondgrid">
+        <input type="text"
+           placeholder="Search an Artist"
+           aria-label="string"
+           #searchBox2 (keyup)="search2(searchBox2.value)"
+           matInput
+           [matAutocomplete]="auto2"
+           id="searchBox">
+            <mat-autocomplete #auto2="matAutocomplete" >
+            <mat-option *ngFor="let search2 of searchedArtist2" [value]="search2.name" (click)="getSecondSearchArtistInfo(search2.name)">
+                {{search2.name}}
+            </mat-option>
+            </mat-autocomplete>
+            <br><br> 
+            <div>    
+                <mat-card class="example-card">
+                <mat-card-title-group>
+                  <mat-card-title>Artist Name : {{artistDetail2.artist && artistDetail2.artist.name}}</mat-card-title>
+                  <mat-card-subtitle>Listeners: {{artistDetail2.artist && artistDetail2.artist.stats && artistDetail2.artist.stats.listeners}} </mat-card-subtitle>
+                  <mat-card-subtitle>Play Counts: {{artistDetail2.artist && artistDetail2.artist.stats && artistDetail2.artist.stats.playcount}}</mat-card-subtitle>
+                  <img mat-card-sm-image src="https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png" >
+                </mat-card-title-group>
+                <mat-card-content>
+                    Description:
+                    {{artistDetail2.artist &&  artistDetail2.artist.bio && artistDetail2.artist.bio.summary}}
+                </mat-card-content>
+                <a [hidden]="!artistDetail2.artist" href="{{artistDetail2.artist && artistDetail2.artist.url}}" target="_blank"><button mat-button>View Profile</button></a>
+              </mat-card>
+            </div>
+    </div>
+  </div> 
+</div>
