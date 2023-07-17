@@ -13,6 +13,7 @@ import {MatDialog ,MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog'
             ]
 })
 export class MainViewComponent implements OnInit {
+  matSpinner = true;
   name:any= '';
   topArtists: any=[]
   artistByCountry:any =[]
@@ -31,7 +32,7 @@ export class MainViewComponent implements OnInit {
 
     this.get.getTopArtist().subscribe(data=>{
       this.topArtists = data;
-      console.log(this.topArtists)
+      this.matSpinner =false;
     });
   }
 
@@ -45,6 +46,7 @@ export class MainViewComponent implements OnInit {
   getByCountry(data:string){
     this.artistByCountry = this.getArtistByCountry.getArtistByCountry(data).subscribe((data)=>{
       this.artistByCountry = data;
+      this.matSpinner =false;
     })
   }
   ngOnInit(): void {
